@@ -92,6 +92,12 @@ html {
     justify-content: space-between;
 }
 
+.fab:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+  }
+
 .nav-header {
     left: 0%;
     top: 0%;
@@ -100,6 +106,7 @@ html {
 .card-icon-link {
     font-size: 20px;
     color: cadetblue;
+    border-radius: 10px;
 }
 
 .nav {
@@ -108,8 +115,4 @@ html {
 
 .navigation :hover {
     border-bottom:0.5px solid black;
-}
-
-.nav :hover {
-    box-shadow : 0 0 30px black;
 }
