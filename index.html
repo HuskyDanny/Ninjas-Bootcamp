@@ -7,9 +7,19 @@
     <title>Junchen'S Porfolio</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Josefin+Slab" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+    <script src="./jquery.color.min.js"></script>
+    <script src="./jquery.animateNumber.min.js"></script>
 </head>
 <body>
     <div class="nav-header">
+        <ul class = 'navigation'>
+            <li class="nav">Home</li>
+            <li class="nav">About Me</li>
+            <li class="nav">Projects</li>
+            <li class="nav">Resume</li>
+        </ul>
         <ul class="social">
             <li>
                 <a href="#" class="card-icon-link">
@@ -31,22 +41,67 @@
                     <i class="fab fa-github"></i>
                 </a>
             </li>
-        </ul>
-        <ul class = 'navigation'>
-            <li class="nav">Home</li>
-            <li class="nav">About Me</li>
-            <li class="nav">Projects</li>
-            <li class="nav">Resume</li>
+            <li>
+                <a href="#" class="card-icon-link">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+            </li>
         </ul>
     </div>
-    <div class="outer-left">
-        <div class="left-block"></div>
+    <div class="clearfix"></div>
+   <div class="left-block">
         <p class="paragraph">
             <span class="top">Create</span>
             <span class="middle">to</span> 
             <span class="bottom">make things Simpler</span>
         </p>
+    </div> 
+    <div class="clearfix"></div>
+
+    <div class="about-me">
+        <div class="part1">
+            <p><span id="coding"> 0</span> <br> Years Coding Experience</p>
+            <i class="fa fa-laptop" style="font-size:58px;color:gray"></i>
+        </div>
+        <div class="part2">
+            <p><span id="analyst">0</span> <br> Data Visual and ML Projects</p>
+            <i class="fa fa-tablet" style="font-size:58px;color:silver"></i>
+        </div>
+        <div class="part3">
+            <p><span id="web">0</span> <br> Web Development Projects</p>
+            <i class="fa fa-clone" style="font-size:58px;color:wheat"></i>
+        </div>
     </div>
-    
+    <div class="clearfix"></div>
+    <div class="second">
+        <p class="paragraph-2">Projects</p>
+        <div class="first-grid">
+            <div class="box a">
+                <p>Kaggle Challenge-Machine Learning</p>
+                <button class="card-button a">See More</button>
+            </div>
+            <div class="box b">
+                <p>Confusion Detector Monitoring</p>
+                <button class="card-button b">See More</button>
+            </div>
+            <div class="box c">C
+                <p>Prometheus Monitoring</p>
+                <button class="card-button c">See More</button>
+            </div>
+            <div class="box d">D
+                <p>Kaggle Survey Visualization</p>
+                <button class="card-button d">See More</button>
+            </div>
+            <div class="box e">E
+                <p>Web Sentiment Analysis</p>
+                <button class="card-button e">See More</button>
+            </div>
+            <div class="box f">F
+                <p>Something Fun happing here</p>
+                <button class="card-button f">See More</button>
+            </div>
+        </div>
+    </div> 
 </body>
+<script src="./script.js"></script>
 </html>
