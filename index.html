@@ -1,107 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Junchen'S Porfolio</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Josefin+Slab" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
-    <script src="./jquery.color.min.js"></script>
-    <script src="./jquery.animateNumber.min.js"></script>
-</head>
-<body>
-    <div class="nav-header">
-        <ul class = 'navigation'>
-            <li class="nav">Home</li>
-            <li class="nav">About Me</li>
-            <li class="nav">Projects</li>
-            <li class="nav">Resume</li>
-        </ul>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Josefin+Slab"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/style_vendor.css" />
+    <link rel="stylesheet" href="./css/Grid.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navigation-bar">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Home</a>
+                <a href="#">About Me</a>
+                <a href="#">Projects</a>
+                <a href="#">Resume</a>
+            </div>
+        </div>
+        <div class="page-btn">
+          <a class="btn btn-home" href="#">Home</a>
+          <a class="btn btn-me" href="#about-me">About Me</a>
+          <a class="btn btn-project" href="#projects">Projects</a>
+          <a class="btn btn-resume" href="./download/JunchenPan_ExtraHop_Resume.pdf" target="_blank">Resume</a>
+        </div>
         <ul class="social">
-            <li>
-                <a href="#" class="card-icon-link">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="card-icon-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="card-icon-link">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="card-icon-link">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="card-icon-link">
-                    <i class="fab fa-kaggle"></i>
-                </a>
-            </li>
+          <li>
+            <a href="#" class="card-icon-link">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/jcp18" class="card-icon-link" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="card-icon-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/HuskyDanny" class="card-icon-link" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kaggle.com/junchp" class="card-icon-link" target="_blank">
+              <i class="fab fa-kaggle"></i>
+            </a>
+          </li>
         </ul>
-    </div>
-    <div class="clearfix"></div>
-   <div class="left-block">
-        <p class="paragraph">
-            <span class="top">Create</span>
-            <span class="middle">to</span> 
-            <span class="bottom">make things Simpler</span>
-        </p>
-    </div> 
-    <div class="clearfix"></div>
+      </div>
+      <div class="text-box">
+        <h1>I am a software engineer. <br />To Make Things Simple For All</h1>
+        <div class="more">
+          <a class="hbtn know-more" href="#about-me">Know More</a>
+          <a class="hbtn hire-me" href="#">Hire Me</a>
+        </div>
+      </div>
+    </header>
 
-    <div class="about-me">
-        <div class="part1">
-            <p><span id="coding"> 0</span> <br> Years Coding Experience</p>
-            <i class="fa fa-laptop" style="font-size:58px;color:gray"></i>
+    <section class="about-me" id="about-me">
+      <div class="intro">
+        <div class="intro-left">
+          <img src="./css/images/Webp.net-compress-image.jpg" />
+          <span> Hello, I'm </span>
+          <span> Junchen Pan</span>
         </div>
-        <div class="part2">
-            <p><span id="analyst">0</span> <br> Data Visual and ML Projects</p>
-            <i class="fa fa-tablet" style="font-size:58px;color:silver"></i>
+        <p>
+          I developed my interest in computer science mostly after my graduation
+          from University of Washington. I took six programming courses at
+          University, but my major was math, so I didn't have so much time on
+          developing application. After graduation, my sincere enthusiam for
+          computer science drove me to learn more knowledge, and build more
+          interesting applications. My main focus is
+          <strong>Full Stack Development</strong>, I am familiar with
+          <strong>Python/Flask</strong> as backend stack,
+          <strong>Javascript/HTML/CSS</strong> as front end stack. Docker and
+          Git are my lifelong partners, distributed system is the thing I am
+          trying to tackle at right now.
+        </p>
+      </div>
+      <div class="tag">
+        <div class="parts part1">
+          <span>
+            <span id="coding"> 0</span> <br />
+            Years Coding Experience
+        </span>
+          <br />
+          <i class="fa fa-laptop"></i>
         </div>
-        <div class="part3">
-            <p><span id="web">0</span> <br> Web Development Projects</p>
-            <i class="fa fa-clone" style="font-size:58px;color:wheat"></i>
+        <div class="parts part2">
+          <span>
+            <span id="analyst">0</span> <br />
+            Personal Application Projects
+          </span>
+          <br />
+          <i class="fa fa-network-wired"></i>
         </div>
-    </div>
-    <div class="clearfix"></div>
-    <div class="second">
-        <p class="paragraph-2">Projects</p>
-        <div class="first-grid">
-            <div class="box a">
-                <p>Kaggle Challenge-Machine Learning</p>
-                <button class="card-button a">See More</button>
-            </div>
-            <div class="box b">
-                <p>Confusion Detector Monitoring</p>
-                <button class="card-button b">See More</button>
-            </div>
-            <div class="box c">C
-                <p>Prometheus Monitoring</p>
-                <button class="card-button c">See More</button>
-            </div>
-            <div class="box d">D
-                <p>Kaggle Survey Visualization</p>
-                <button class="card-button d">See More</button>
-            </div>
-            <div class="box e">E
-                <p>Web Sentiment Analysis</p>
-                <button class="card-button e">See More</button>
-            </div>
-            <div class="box f">F
-                <p>Something Fun happing here</p>
-                <button class="card-button f">See More</button>
-            </div>
+        <div class="parts part3">
+          <span>
+            <span id="web">0</span> <br />
+            Months Working Experience
+          </span>
+          <br />
+          <i class="fa fa-clone"></i>
         </div>
-    </div> 
-</body>
-<script src="./script.js"></script>
+      </div>
+    </section>
+
+    <section class="colorlib-work" data-section="work" id="projects">
+      <div class="colorlib-narrow-content">
+        <div class="row">
+          <div
+            class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
+            data-animate-effect="fadeInLeft"
+          >
+            <span class="heading-meta">My Work</span>
+            <h2 class="colorlib-heading animate-box">Recent Work</h2>
+          </div>
+        </div>
+        <div
+          class="row row-bottom-padded-sm animate-box"
+          data-animate-effect="fadeInLeft"
+        >
+          <div class="col-md-12">
+            <p class="work-menu">
+              <span><a href="#" class="active">Web Applications</a></span>
+              <span><a href="#">Data Visual&Machine Learning</a></span>
+              <span><a href="#">School Projects</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+            <div
+              class="project"
+              style="background-image: url(./css/images/img-1.jpg);"
+            >
+              <div class="desc">
+                <div class="con">
+                  <h3><a href="work.html">Work 01</a></h3>
+                  <span>Confusion Detector</span> 
+                  <span>#Machine Learning #Web development #Full Stack</span>
+                  <p class="icon">
+                    <span
+                      ><a href="#"><i class="icon-share3"></i></a
+                    ></span>
+                  </p>
+                  <h3 class="work-btn1-header"><a class="work-btn1" href="https://github.com/HuskyDanny/Real-Time-Perplexity-Level-Monitoring">See More</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+            <div
+              class="project"
+              style="background-image: url(./css/images/img-2.jpg);"
+            >
+              <div class="desc">
+                <div class="con">
+                  <h3><a href="work.html">Work 02</a></h3>
+                  <span>Animation</span>
+                  <p class="icon">
+                    <span
+                      ><a href="#"><i class="icon-share3"></i></a
+                    ></span>
+                  </p>
+                  <h3 class="work-btn1-header"><a class="work-btn1" href="https://github.com/HuskyDanny/Real-Time-Perplexity-Level-Monitoring">See More</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
+            <div
+              class="project"
+              style="background-image: url(./css/images/img-3.jpg);"
+            >
+              <div class="desc">
+                <div class="con">
+                  <h3><a href="work.html">Work 03</a></h3>
+                  <span>Illustration</span>
+                  <p class="icon">
+                    <span
+                      ><a href="#"><i class="icon-share3"></i></a
+                    ></span>
+                  </p>
+                  <h3 class="work-btn1-header"><a class="work-btn1" href="https://github.com/HuskyDanny/Real-Time-Perplexity-Level-Monitoring">See More</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+            <div
+              class="project"
+              style="background-image: url(./css/images/img-4.jpg);"
+            >
+              <div class="desc">
+                <div class="con">
+                  <h3><a href="work.html">Work 04</a></h3>
+                  <span>Application</span>
+                  <p class="icon">
+                    <span
+                      ><a href="#"><i class="icon-share3"></i></a
+                    ></span>
+                  </p>
+                  <h3 class="work-btn1-header"><a class="work-btn1" href="https://github.com/HuskyDanny/Real-Time-Perplexity-Level-Monitoring">See More</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+            <div
+              class="project"
+              style="background-image: url(./css/images/img-5.jpg);"
+            >
+              <div class="desc">
+                <div class="con">
+                  <h3><a href="work.html">Work 05</a></h3>
+                  <span>Graphic, Logo</span>
+                  <p class="icon">
+                    <span
+                      ><a href="#"><i class="icon-share3"></i></a
+                    ></span>
+                  </p>
+                  <h3 class="work-btn1-header"><a class="work-btn1" href="https://github.com/HuskyDanny/Real-Time-Perplexity-Level-Monitoring">See More</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+            <div
+              class="project"
+              style="background-image: url(./css/images/img-6.jpg);"
+            >
+              <div class="desc">
+                <div class="con">
+                  <h3><a href="work.html">Work 06</a></h3>
+                  <span>Web Design</span>
+                  <p class="icon">
+                    <span
+                      ><a href="#"><i class="icon-share3"></i></a
+                    ></span>
+                  </p>
+                  <h3 class="work-btn1-header"><a class="work-btn1" href="https://github.com/HuskyDanny/Real-Time-Perplexity-Level-Monitoring">See More</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <script src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+    <script src="./javascript//jquery.color.min.js"></script>
+    <script src="./javascript/jquery.animateNumber.min.js"></script>
+    <script src="./javascript/script.js"></script>
+  </body>
 </html>
