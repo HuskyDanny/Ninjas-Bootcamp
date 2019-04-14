@@ -1,18 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   background-color: #fff;
-  /* font-family: "Lato";
-  font-weight: 300;
-  font-size: 20px; */
   text-rendering: optimizeLegibility;
 }
-
-/* //////////////////////////// */
 
 /* header part */
 header {
