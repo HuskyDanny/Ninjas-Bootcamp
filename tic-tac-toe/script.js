@@ -1,11 +1,21 @@
 // alternatives for var?
-var rows, cols, playerActive, gameGoing, pivot0, pivot1;
-pivot = false;
+var grid, playerActive, gameGoing;
+
+function makeArray(w, h, val) {
+  result = [];
+  for (let i = 0; i <= h; i++) {
+    let temp = [];
+    result.push(temp);
+    for (let j = 0; j <= w; j++) {
+      temp.push(val);
+    }
+  }
+  return result;
+}
 
 //Restart everything
 const init = function() {
-  rows = [[0, 0], [0, 0], [0, 0]];
-  cols = [[0, 0], [0, 0], [0, 0]];
+  grid = makeArray(2, 2, -1);
   playerActive = 0;
   gameGoing = true;
   document.querySelector(".p" + 0 + "bar").style.display = "block";
@@ -20,55 +30,38 @@ const init = function() {
   }
 };
 
-// check the diagonal winning condition
-const checkDiagonal = function() {
-  if (!playerActive) {
-    if (!pivot0) {
-      return false;
-    }
-  }
-  if (playerActive) {
-    if (!pivot1) {
-      return false;
-    }
-  }
-  for (let i = 0; i < rows.length; i++) {
-    if (rows[i][playerActive] <= 0) {
-      return false;
-    }
-  }
-  for (let i = 0; i < cols.length; i++) {
-    if (cols[i][playerActive] <= 0) {
-      return false;
-    }
-  }
-  return true;
-};
-
 //Updating game score and check for winning condition
 const algorithm = function(j, i) {
-  if (j == 1 && i == 1 && playerActive === 1) {
-    if (playerActive === 1) {
-      pivot1 = true;
-    }
-    if (playerActive === 0) {
-      pivot0 = true;
-    }
-  }
-  rows[j][playerActive] += 1;
-  cols[i][playerActive] += 1;
-  console.log(cols);
-  console.log(rows);
-  console.log(pivot);
+  grid[j][i] = playerActive;
+  //column-wise
   if (
-    rows[j][playerActive] === 3 ||
-    cols[i][playerActive] === 3 ||
-    checkDiagonal()
+    grid.slice(j - 1)[0].slice(i)[0] === playerActive &&
+    grid.slice((j + 1) % grid.length)[0].slice(i)[0] === playerActive
   ) {
     return true;
-  } else {
-    return false;
+    //row-wise
+  } else if (
+    grid.slice(j)[0].slice(i - 1)[0] === playerActive &&
+    grid.slice(j)[0].slice((i + 1) % grid.length)[0] === playerActive
+  ) {
+    return true;
   }
+  //diagnal wise top-down
+  if (
+    grid.slice(j - 1)[0].slice(i - 1)[0] === playerActive &&
+    grid.slice((j + 1) % grid.length)[0].slice((i + 1) % grid.length)[0] ===
+      playerActive
+  ) {
+    return true;
+  }
+  //diagnal wise bottom-up
+  if (
+    grid.slice((j + 1) % grid.length)[0].slice(i - 1)[0] === playerActive &&
+    grid.slice(j - 1)[0].slice((i + 1) % grid.length)[0] === playerActive
+  ) {
+    return true;
+  }
+  return false;
 };
 
 // Listen and animate the playing process
@@ -83,7 +76,7 @@ const animate = function(index) {
       oImg.setAttribute("class", "images");
       oImg.setAttribute("width", "100%");
       document.querySelector("#" + index).appendChild(oImg);
-      if (algorithm(j, i)) {
+      if (algorithm(parseInt(j), parseInt(i))) {
         document.querySelector(".w" + playerActive).style.display = "block";
         gameGoing = false;
       } else {
