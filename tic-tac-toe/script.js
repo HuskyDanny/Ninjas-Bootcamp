@@ -62,14 +62,15 @@ const animate = function(index) {
       oImg.setAttribute("class", "images");
       oImg.setAttribute("width", "100%");
       document.querySelector("#" + index).appendChild(oImg);
-      document.querySelector(".p" + playerActive + "bar").style.display =
-        "none";
-      playerActive = playerActive ? 0 : 1;
-      document.querySelector(".p" + playerActive + "bar").style.display =
-        "block";
       if (algorithm(j, i)) {
         document.querySelector(".w" + playerActive).style.display = "block";
         gameGoing = false;
+      } else {
+        document.querySelector(".p" + playerActive + "bar").style.display =
+          "none";
+        playerActive = playerActive ? 0 : 1;
+        document.querySelector(".p" + playerActive + "bar").style.display =
+          "block";
       }
     }
   });
