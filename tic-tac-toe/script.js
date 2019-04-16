@@ -1,5 +1,6 @@
 // alternatives for var?
-var rows, cols, playerActive, gameGoing;
+var rows, cols, playerActive, gameGoing, pivot0, pivot1;
+pivot = false;
 
 //Restart everything
 const init = function() {
@@ -21,6 +22,16 @@ const init = function() {
 
 // check the diagonal winning condition
 const checkDiagonal = function() {
+  if (!playerActive) {
+    if (!pivot0) {
+      return false;
+    }
+  }
+  if (playerActive) {
+    if (!pivot1) {
+      return false;
+    }
+  }
   for (let i = 0; i < rows.length; i++) {
     if (rows[i][playerActive] <= 0) {
       return false;
@@ -36,9 +47,19 @@ const checkDiagonal = function() {
 
 //Updating game score and check for winning condition
 const algorithm = function(j, i) {
+  if (j == 1 && i == 1 && playerActive === 1) {
+    if (playerActive === 1) {
+      pivot1 = true;
+    }
+    if (playerActive === 0) {
+      pivot0 = true;
+    }
+  }
   rows[j][playerActive] += 1;
   cols[i][playerActive] += 1;
-
+  console.log(cols);
+  console.log(rows);
+  console.log(pivot);
   if (
     rows[j][playerActive] === 3 ||
     cols[i][playerActive] === 3 ||
