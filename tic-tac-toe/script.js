@@ -38,42 +38,30 @@ const algorithm = function(j, i) {
     grid.slice(j - 1)[0].slice(i)[0] === playerActive &&
     grid.slice((j + 1) % grid.length)[0].slice(i)[0] === playerActive
   ) {
-    console.log(1);
     return true;
     //row-wise
   } else if (
     grid.slice(j)[0].slice(i - 1)[0] === playerActive &&
     grid.slice(j)[0].slice((i + 1) % grid.length)[0] === playerActive
   ) {
-    console.log(2);
     return true;
   }
-
   //diagnal wise top-down
   if (
     grid.slice(j - 1)[0].slice(i - 1)[0] === playerActive &&
     grid.slice((j + 1) % grid.length)[0].slice((i + 1) % grid.length)[0] ===
-      playerActive
+      playerActive &&
+    grid[1][1] == playerActive
   ) {
-    console.log(3);
     return true;
   }
   //diagnal wise bottom-up
   if (
     grid.slice((j + 1) % grid.length)[0].slice(i - 1)[0] === playerActive &&
-    grid.slice(j - 1)[0].slice((i + 1) % grid.length)[0] === playerActive
+    grid.slice(j - 1)[0].slice((i + 1) % grid.length)[0] === playerActive &&
+    grid[1][1] == playerActive
   ) {
-    if (j + 1 > 2) {
-      if (i - 1 < 0) {
-        return true;
-      }
-    }
-    if (i + 1 > 2) {
-      if (j - 1 < 0) {
-        return true;
-      }
-    }
-    return false;
+    return true;
   }
   return false;
 };
