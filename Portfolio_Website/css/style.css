@@ -1,18 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   background-color: #fff;
-  /* font-family: "Lato";
-  font-weight: 300;
-  font-size: 20px; */
   text-rendering: optimizeLegibility;
 }
-
-/* //////////////////////////// */
 
 /* header part */
 header {
@@ -91,17 +80,6 @@ header {
   width: 170px;
   border-radius: 200px;
   border: 1px solid #e67e22;
-}
-
-.hbtn:link,
-.hbtn :visited {
-  display: inline-block;
-  padding: 10px 30px;
-  font-weight: 300;
-  text-decoration: none;
-  border-radius: 200px;
-  color: #fff;
-  transition: background-color 0.8s, border 0.8s, color 0.8s;
 }
 
 .more {
@@ -183,7 +161,18 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(15, 15, 15, 0.24);
+  /* background-color: ; */
+}
+
+.contact100-more h1{
+  color: white;
+  
+}
+
+.about-me h1 {
+  margin-top: 5%;
+  margin-bottom: 0;
+  margin-left: 3%;
 }
 
 .first-row {
@@ -228,8 +217,8 @@ header {
 }
 
 .intro p {
-  font-family: "Lato";
-  font-weight: 10;
+  font-family: 'Lato';
+  font-weight: 300;
   letter-spacing: 1px;
   font-size: 19px;
   word-spacing: 1px;
@@ -253,7 +242,7 @@ header {
 
 .intro-left {
   margin-right: 5%;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  
 }
 
 .intro-left span {

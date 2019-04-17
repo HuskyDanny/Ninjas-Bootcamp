@@ -4,17 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Junchen'S Porfolio</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Josefin+Slab"
-      rel="stylesheet"
-    />
+    <title>Junchen's Porfolio</title>
+
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/style_vendor.css" />
     <link rel="stylesheet" href="./css/Grid.css" />
@@ -33,10 +26,11 @@
             </div>
         </div>
         <div class="page-btn">
-          <a class="btn btn-home" href="#">Home</a>
+          
           <a class="btn btn-me" href="#about-me">About Me</a>
           <a class="btn btn-project" href="#projects">Projects</a>
           <a class="btn btn-resume" href="./download/JunchenPan_ExtraHop_Resume.pdf" target="_blank">Resume</a>
+          <a class="btn btn-home" href="#contact">Contact</a>
         </div>
         <ul class="social">
           <li>
@@ -70,12 +64,13 @@
         <h1>I am a software engineer. <br />To Make Things Simple For All</h1>
         <div class="more">
           <a class="hbtn know-more" href="#about-me">Know More</a>
-          <a class="hbtn hire-me" href="#">Hire Me</a>
+          <a class="hbtn hire-me" href="#contact">Hire Me</a>
         </div>
       </div>
     </header>
 
     <section class="about-me" id="about-me">
+      <h1 class= 'colorlib-heading animate-box'>About-Me</h1>
       <div class="intro">
         <div class="intro-left">
           <img src="./css/images/Webp.net-compress-image.jpg" />
@@ -131,7 +126,6 @@
             class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
             data-animate-effect="fadeInLeft"
           >
-            <span class="heading-meta">My Work</span>
             <h2 class="colorlib-heading animate-box">Recent Work</h2>
           </div>
         </div>
@@ -168,7 +162,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight" id="w1">
             <div
               class="project"
               style="background-image: url(./css/images/img-2.jpg);"
@@ -265,9 +259,98 @@
           </div>
         </div>
     </section>
+    <footer class="container-contact100" id="contact">
+      <div class="wrap-contact100">
+        <form class="contact100-form validate-form">
+          <span class="contact100-form-title">
+            Send Me A Message
+          </span>
+  
+          <label class="label-input100" for="email">Enter your email *</label>
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+            <span class="focus-input100"></span>
+          </div>
+  
+          <label class="label-input100" for="message">Message *</label>
+          <div class="wrap-input100 validate-input" data-validate = "Message is required">
+            <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+            <span class="focus-input100"></span>
+          </div>
+  
+          <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn">
+              Send Message
+            </button>
+          </div>
+        </form>
+  
+        <div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
+          <h1 class="colorlib-heading animate-box">Contact</h1>
+          <div class="flex-w size1 p-b-47">
+            <div class="txt1 p-r-25">
+              <span class="lnr lnr-map-marker"></span>
+            </div>
+  
+            <div class="flex-col size2">
+              <span class="txt1 p-b-20">
+                Address
+              </span>
+  
+              <span class="txt2">
+                University Way, Seattle, WA, 98105
+              </span>
+            </div>
+          </div>
+  
+          <div class="dis-flex size1 p-b-47">
+            <div class="txt1 p-r-25">
+              <span class="lnr lnr-phone-handset"></span>
+            </div>
+  
+            <div class="flex-col size2">
+              <span class="txt1 p-b-20">
+                Lets Talk
+              </span>
+  
+              <span class="txt3">
+                +1 206-499-3131
+              </span>
+            </div>
+          </div>
+  
+          <div class="dis-flex size1 p-b-47">
+            <div class="txt1 p-r-25">
+              <span class="lnr lnr-envelope"></span>
+            </div>
+  
+            <div class="flex-col size2">
+              <span class="txt1 p-b-20">
+                My Email
+              </span>
+  
+              <span class="txt3">
+                junchenp1018@gmail.com
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>  
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
-    <script src="./javascript//jquery.color.min.js"></script>
     <script src="./javascript/jquery.animateNumber.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+    />
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300|Montserrat:100"
+        rel="stylesheet"
+    />
     <script src="./javascript/script.js"></script>
   </body>
 </html>
