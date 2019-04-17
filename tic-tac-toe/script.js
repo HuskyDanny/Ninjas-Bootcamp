@@ -1,5 +1,5 @@
 // alternatives for var?
-var grid, playerActive, gameGoing;
+var grid, playerActive, gameGoing, counts;
 
 function makeArray(w, h, val) {
   result = [];
@@ -15,6 +15,7 @@ function makeArray(w, h, val) {
 
 //Restart everything
 const init = function() {
+  counts = 0;
   grid = makeArray(2, 2, -1);
   playerActive = 0;
   gameGoing = true;
@@ -27,6 +28,10 @@ const init = function() {
   while (imgs) {
     imgs.parentNode.removeChild(imgs);
     imgs = document.querySelector(".images");
+  }
+  let draw = document.querySelector(".draw");
+  if (draw) {
+    draw.parentNode.removeChild(draw);
   }
 };
 
@@ -47,29 +52,30 @@ const algorithm = function(j, i) {
     return true;
   }
   //diagnal wise top-down
-  if (
-    grid.slice(j - 1)[0].slice(i - 1)[0] === playerActive &&
-    grid.slice((j + 1) % grid.length)[0].slice((i + 1) % grid.length)[0] ===
-      playerActive &&
-    grid[1][1] == playerActive
-  ) {
-    return true;
+  if (grid[1][1] == playerActive) {
+    if (
+      grid.slice(j - 1)[0].slice(i - 1)[0] === playerActive &&
+      grid.slice((j + 1) % grid.length)[0].slice((i + 1) % grid.length)[0] ===
+        playerActive
+    ) {
+      return true;
+    }
+    //diagnal wise bottom-up
+    if (
+      grid.slice((j + 1) % grid.length)[0].slice(i - 1)[0] === playerActive &&
+      grid.slice(j - 1)[0].slice((i + 1) % grid.length)[0] === playerActive
+    ) {
+      return true;
+    }
+    return false;
   }
-  //diagnal wise bottom-up
-  if (
-    grid.slice((j + 1) % grid.length)[0].slice(i - 1)[0] === playerActive &&
-    grid.slice(j - 1)[0].slice((i + 1) % grid.length)[0] === playerActive &&
-    grid[1][1] == playerActive
-  ) {
-    return true;
-  }
-  return false;
 };
 
 // Listen and animate the playing process
 const animate = function(index) {
   document.querySelector("#" + index).addEventListener("click", function() {
     if (gameGoing) {
+      counts += 1;
       const i = index.slice(-1)[0];
       const j = index.slice(-2)[0];
       const oImg = document.createElement("img");
@@ -87,6 +93,16 @@ const animate = function(index) {
         playerActive = playerActive ? 0 : 1;
         document.querySelector(".p" + playerActive + "bar").style.display =
           "block";
+      }
+      if (counts > 8 && gameGoing) {
+        const draw = document.createElement("span");
+        draw.innerHTML = "<strong> DRAW </strong>";
+        draw.setAttribute("class", "draw");
+        draw.style.marginLeft = "auto";
+        draw.style.marginRight = "auto";
+        draw.style.fontSize = "50px";
+        document.querySelector(".board").appendChild(draw);
+        gameGoing = false;
       }
     }
   });
